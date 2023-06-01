@@ -87,4 +87,4 @@ let item = Item(name: "Hello", description: "hello", subItems: [])
 ```
 
 ## License
-flipper-plugin-control-ui is released under the MIT License. See [LICENSE](./LICENSE)
+swift-method-chainable is released under the MIT License. See [LICENSE](./LICENSE)
