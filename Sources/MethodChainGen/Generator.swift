@@ -150,7 +150,7 @@ extension Generator {
                 ReturnStmt(expression: IdentifierExpr(identifier: .identifier("new")))
             }
 
-            var currentAttributes = newFunctions[i].attributes ?? AttributeListSyntax([])
+            let currentAttributes = newFunctions[i].attributes ?? AttributeListSyntax([])
             newFunctions[i].attributes = currentAttributes.appending(.attribute(._disfavoredOverload))
 
             newFunctions[i].funcKeyword = .funcKeyword(leadingTrivia: .newline)
@@ -207,7 +207,7 @@ extension Generator {
                 ReturnStmt(expression: IdentifierExpr(identifier: .selfKeyword()))
             }
 
-            var currentAttributes = newFunctions[i].attributes ?? AttributeListSyntax([])
+            let currentAttributes = newFunctions[i].attributes ?? AttributeListSyntax([])
             newFunctions[i].attributes = currentAttributes.appending(.attribute(._disfavoredOverload))
 
             newFunctions[i].funcKeyword = .funcKeyword(leadingTrivia: .newline)

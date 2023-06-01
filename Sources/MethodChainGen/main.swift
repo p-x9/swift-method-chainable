@@ -10,7 +10,7 @@ import Foundation
 import ArgumentParser
 
 #if os(macOS)
-struct ModifierGen: ParsableCommand {
+struct MethodChainGen: ParsableCommand {
     static var configuration: CommandConfiguration = .init(
         commandName: "swchaingen",
         abstract: "Generates chainable method code from Swift methods.",
@@ -38,5 +38,5 @@ struct ModifierGen: ParsableCommand {
     }
 }
 
-ModifierGen.main()
+MethodChainGen.main()
 #endif
