@@ -8,7 +8,7 @@ Generates chainable method code from Swift methods.
 [![Github stars](https://img.shields.io/github/stars/p-x9/swift-method-chainable)](https://github.com/p-x9/swift-method-chainable/stargazers)
 [![Github top language](https://img.shields.io/github/languages/top/p-x9/swift-method-chainable)](https://github.com/p-x9/swift-method-chainable/)
 
-![image](https://github.com/p-x9/swift-method-chainable/assets/50244599/41f39c0b-7e09-44b8-abee-03c2edab3263)
+![image](https://github.com/p-x9/swift-method-chainable/assets/50244599/c5677286-fea1-4db5-b822-8de03b1371e1)
 ## Usage
 You can download it from [Release](https://github.com/p-x9/swift-method-chainable/releases)
 
