@@ -48,7 +48,9 @@ class Generator {
 extension Generator {
     private func generate(forDirectory url: URL, outputDirectory: URL) throws {
         let contents = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil)
-        try contents.forEach {
+        try contents
+            .filter { !$0.path.contains(outputDirectory.path) }
+            .forEach {
             if $0.pathExtension == "swift" {
                 try generate(forFile: $0, outputDirectory: outputDirectory)
             } else if fileManager.isDirectory($0) {
