@@ -155,6 +155,13 @@ extension Generator {
             newFunctions[i].body = CodeBlockSyntax(statements: codeBlockItemList)
             newFunctions[i].signature.output = ReturnClauseSyntax(returnType: SimpleTypeIdentifierSyntax(name: .capitalSelf))
 
+            let modifiers = newFunctions[i].modifiers?
+                .map { $0.withLeadingTrivia(.newline) }
+                .filter {
+                    $0.name.withoutTrivia().text != "mutating"
+                } ?? []
+            newFunctions[i].modifiers = .init(modifiers)
+
             newFunctions[i] = newFunctions[i].withoutTrivia()
 
             if i != 0 {
@@ -205,9 +212,11 @@ extension Generator {
             newFunctions[i].body = CodeBlockSyntax(statements: codeBlockItemList)
             newFunctions[i].signature.output = ReturnClauseSyntax(returnType: SimpleTypeIdentifierSyntax(name: .capitalSelf))
 
-            let modifiers = newFunctions[i].modifiers?.filter {
-                $0.name.withoutTrivia().text != "override"
-            } ?? []
+            let modifiers = newFunctions[i].modifiers?
+                .map { $0.withLeadingTrivia(.newline) }
+                .filter {
+                    $0.name.withoutTrivia().text != "override"
+                } ?? []
             newFunctions[i].modifiers = .init(modifiers)
 
             newFunctions[i] = newFunctions[i].withoutTrivia()
